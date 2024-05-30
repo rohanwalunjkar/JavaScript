@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function maxx() {
+           
+            a = parseInt(document.getElementById("num1").value);
+            b = parseInt(document.getElementById("num2").value);
+            c = parseInt(document.getElementById("num3").value);
+
+            var result = (a > b && a > c) ? a : (b > a && b > c) ? b : c;
+            console.log(result);
+            document.getElementById("res1").value = result;
+        }
+    </script>
+</head>
+
+<body>
+    Number1: <input type="text" name="num1" id="num1"><br>
+    Number2: <input type="text" name="num2" id="num2"><br>
+    Number3: <input type="text" name="num3" id="num3"><br>
+    Result: <input type="text" name="res" id="res1" readonly><br>
+    <button type="button" onclick="maxx()">Max OF Thre</button>
+
+
+</body>
+
+</html>

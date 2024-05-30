@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+    <script>
+
+        function print() {
+            n = parseInt(document.getElementById("nu").value)
+            ms = document.getElementById("msg").Value;
+            rep = parseInt(prompt("Enter the Repetation do you want?"));
+
+            console.log(n);
+
+            while (rep != 0) {
+                document.getElementById("re").innerHTML += n + "ms"+"<br>";
+                rep--;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    number: <input type="text" name="num" id="nu"><br>
+    message: <input type="text" name="msg" id="msg">
+    <!-- Result: <input type="text" name="res" id="res" readonly><br> -->
+    <div id="re"></div>
+    <button type="button" onclick="print()">Print Message</button>
+
+</body>
+
+</html>
