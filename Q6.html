@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function summ() {
+        num1 = parseInt(document.getElementById("n1").value);
+        sum = 0;
+
+        while (num1 != 0) {
+          sum += num1 % 10;
+          num1 = Math.round(num1 / 10);
+        }
+
+        document.getElementById("res").value = sum;
+      }
+    </script>
+  </head>
+  <body>
+    number: <input type="text" name="n1" id="n1" /> <br />
+    result:<input type="text" name="res" id="res" /><br />
+    <button type="button" onclick="summ()">sum</button>
+  </body>
+</html>

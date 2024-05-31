@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass4</title>
+
+    <script>
+
+        //  var num1 = parseInt(document.getElementById("n1").value)
+        //  var num2 = parseInt(document.getElementById("n2").value)
+        // console.log(num1)
+        function add() {
+            num1 = parseInt(document.getElementById("n1").value)
+            num2 = parseInt(document.getElementById("n2").value)
+            result = num1 + num2
+            document.getElementById("res").value = result;
+        }
+        function sub() {
+            num1 = parseInt(document.getElementById("n1").value)
+            num2 = parseInt(document.getElementById("n2").value)
+            result = num1 - num2
+            document.getElementById("res").value = result;
+        }
+        function mul() {
+            num1 = parseInt(document.getElementById("n1").value)
+            num2 = parseInt(document.getElementById("n2").value)
+            result = num1 * num2
+            document.getElementById("res").value = result;
+        }
+        function div() {
+            num1 = parseInt(document.getElementById("n1").value)
+            num2 = parseInt(document.getElementById("n2").value)
+            result = num1 / num2
+            document.getElementById("res").value = result;
+        }
+        function pow() {
+            num1 = parseInt(document.getElementById("n1").value)
+            num2 = parseInt(document.getElementById("n2").value)
+            result = num1 ** num2
+            document.getElementById("res").value = result;
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    number1: <input type="text" name="n1" id="n1"><br>
+    number2: <input type="text" name="n2" id="n2"><br>
+    result: <input type="text" name="res" id="res" readonly><br>
+    <button type="button" onclick="add()">Add</button>
+    <button type="button" onclick="sub()">Sub</button>
+    <button type="button" onclick="mul()">Mul</button>
+    <button type="button" onclick="div()">Div</button>
+    <button type="button" onclick="pow()">Power</button>
+
+
+
+</body>
+
+</html>
