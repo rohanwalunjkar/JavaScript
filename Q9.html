@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #f1 {
+        width: 30%;
+        margin-left: 35%;
+        text-align: center;
+      }
+
+      table {
+        text-align: left;
+        margin-left: 25%;
+      }
+    </style>
+
+    <script>
+      function comp() {
+        prin = parseInt(document.getElementById("p1").value);
+        roi = parseInt(document.getElementById("r1").value);
+        peroid = parseInt(document.getElementById("p11").value);
+
+        var result = prin * Math.pow(1 + roi / 100, peroid) - prin;
+
+        document.getElementById("c1").value = result;
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset id="f1">
+      <h1 style="background-color: beige; color: #f30b0b">
+        Calculate Compound Interest
+      </h1>
+      <table>
+        <tr>
+          <td>Principal:</td>
+          <td><input type="text" name="" id="p1" /></td>
+        </tr>
+        <tr>
+          <td>Rate Of Interest:</td>
+          <td><input type="text" id="r1" /></td>
+        </tr>
+        <tr>
+          <td>Period:</td>
+          <td><input type="number" name="" id="p11" /></td>
+        </tr>
+        <tr>
+          <td>Compound Interest</td>
+          <td><input type="text" id="c1" /></td>
+        </tr>
+      </table>
+
+      <button type="button" onclick="comp()">calculate</button>
+    </fieldset>
+  </body>
+</html>
