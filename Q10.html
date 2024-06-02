@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass10</title>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <h2 id="currentDateTime"></h2>
+    <h3 id="daysLeft"></h3>
+
+    <script>
+        
+        function getCurrentDate() {
+            const today = new Date();
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            const dayOfWeek = days[today.getDay()];
+            const dayOfMonth = today.getDate();
+            const month = months[today.getMonth()];
+            const year = today.getFullYear();
+
+            return `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
+        }
+
+       
+        function getGreeting() {
+            const currentTime = new Date();
+            const hour = currentTime.getHours();
+            let greeting = '';
+
+            if (hour < 12) {
+                greeting = 'Good Morning';
+            } else if (hour < 18) {
+                greeting = 'Good Afternoon';
+            } else {
+                greeting = 'Good Evening';
+            }
+
+            return greeting;
+        }
+
+       
+        function getDaysLeft() {
+            const today = new Date();
+            const endOfYear = new Date(today.getFullYear(), 11, 31); 
+            const oneDay = 24 * 60 * 60 * 1000; 
+            const daysLeft = Math.round((endOfYear - today) / oneDay);
+            return daysLeft;
+        }
+
+        
+        document.getElementById('currentDateTime').textContent = `Today is ${getCurrentDate()}, Welcome, and ${getGreeting()} to you.`;
+
+        document.getElementById('daysLeft').textContent = `Number of days left till end of year: ${getDaysLeft()}`;
+    </script>
+</body>
+</html>
