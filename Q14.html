@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass14</title>
+    <script src="./jquerydemos/scripts/jquery.js"></script>
+    <script>
+        var rectangle={
+            len:6,
+            br:4,
+            display:function () {
+                return `Length is ${this.len} and breadth is ${this.br} <br>
+                Area of rectangle is : ${this.len*this.br} <br>
+                Perimeter of rectangle is : ${2*(this.len+this.br)} <hr>`;
+            }
+
+        }
+
+        var circle={
+            radius:5,
+            display:function () {
+                return `Radius is ${this.radius}<br>
+                Area of circle is : ${Math.round(Math.PI*this.radius*this.radius)} <br>
+                Perimeter of circle is : ${Math.round(2*(Math.PI*this.radius))} <hr>`;
+            }
+
+        }
+
+        document.write(`${rectangle.display()}`);
+        document.write(`${circle.display()}`);
+    
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

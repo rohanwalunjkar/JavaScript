@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q13</title>
+    <script src="jquery/jj.js"></script>
+
+    <script>
+        var arr = [{ id: 1, name: "Rohan", sal: 220000 }, { id: 2, name: "Rohini", sal: 40000 }, { id: 3, name: "Sanhita", sal: 60000 }, { id: 1, name: "Shubham", sal: 23000 }]
+        function display() {
+            var str = "<table border='2'><tr><th>empID</th><th>empName</th><th>empSal</th></tr>"
+            for (var ob of arr) {
+                str += `<tr><td>${ob.id}</td><td>${ob.name}</td><td>${ob.sal}</td></tr>`
+            }
+            str += `</table>`
+
+            $("#result").html(str);
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="display()">Press</button>
+    <div id="result"></div>
+</body>
+
+</html>

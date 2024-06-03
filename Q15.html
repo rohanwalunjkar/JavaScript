@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass15</title>
+    <script src="jquery/jj.js"></script>
+    <script>
+       
+        $(document).ready(function () {
+            var arr = ["Rohan", "Rohini", "Shubham", "Sanhita", "Ram"];
+            var originalArray = "Original array is: " + arr.join(", ");
+            arr.reverse();
+            var reversedArray = "Reversed array is: " + arr.join(", ");
+            arr.sort();
+            var sortedArray = "Sorted array is: " + arr.join(", ");
+
+           
+            var finalOutput = originalArray + "<br>" + reversedArray + "<br>" + sortedArray;
+
+            $("#d1").html(finalOutput);
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="d1">
+
+    </div>
+
+
+</body>
+
+</html>
