@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jscript.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+
+            $("#btn").click(function () {
+
+                var s1 = $("#str1").val();
+                var s2 = $("#str2").val();
+                var s3 = $("#str3").val();
+                var name = $("input[name=r1]:checked").val()
+
+                switch (name) {
+                    case 'search':
+                        $("#result").html(s1.match(s2));
+                        break;
+                    case 'upper':
+                        $("#result").html(s1.toUpperCase());
+                        break;
+                    case 'lower':
+                        $("#result").html(s1.toLowerCase());
+                        break;
+                    case 'trim':
+                        $("#result").html(s1.trim());
+                        break;
+                    case 'concate':
+                        $("#result").html(s1+s2);
+                        break;
+                    case 'replace':
+                        $("#result").html(s1.replace(s2,replace));
+                        $("#result").html(s1);
+                        break;
+                    default:
+                        $("#result").html("Invalid Choice");
+
+
+                }
+            })
+
+        })
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        Enter String: <input type="text" name="str1" id="str1"><br><br>
+        Enter SubString: <input type="text" name="str2" id="str2"><br><br>
+        Repalce with String: <input type="text" name="str3" id="str3"><br><br>
+        <input type="radio" name="r1" id="s1" value="search">Search SubString in main string &nbsp &nbsp;
+        <input type="radio" name="r1" id="s2" value="upper">TO Upper Case &nbsp &nbsp;
+        <input type="radio" name="r1" id="s3" value="lower">To Lower Case &nbsp &nbsp;
+        <input type="radio" name="r1" id="s4" value="trim">Trim Spaces &nbsp &nbsp;
+        <input type="radio" name="r1" id="s5" value="concate">Concatenate &nbsp &nbsp;
+        <input type="radio" name="r1" id="s6" value="replace">Repalce &nbsp &nbsp
+        <br>
+
+        <button type="button" id="btn">Submit Query</button>
+
+        <div id="result">
+
+        </div>
+
+    </fieldset>
+
+</body>
+
+</html>
