@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function arrelements(){
+        arr=["john","steve","ben","damon","lan"]
+        str="<ol>";
+        for(i=0;i<arr.length;i++){
+
+        str+=`<li>${arr[i]}</li>`
+        }
+        str +="</ol>";
+       //document.write(str);
+       document.getElementById("list").innerHTML=str;
+    }
+    </script>
+
+    <style>
+
+        #d1{
+            border: 2px solid gray;
+            width: 25%;
+            margin-left: 300px;
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+<body onload="arrelements()">
+    <div id="d1">
+    <h3>Members of my Group are</h3>
+    <ol id="list">
+
+    </ol>
+    <!-- <div id="list">
+
+    </div> -->
+   
+</div>
+    
+</body>
+</html>
