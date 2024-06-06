@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q12</title>
+    <script src="./jquery/jj.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function() {
+                
+                var divsWithTraining = $('.div:contains("trainning")');
+                if (divsWithTraining.length > 0) {
+                    $("#d4").html(`<p>Hilighted div contains 'trainning'</p>`);
+                    divsWithTraining.css('background-color', 'yellow');
+                }else{
+                    $("#d4").html(`<p>Div does'nt contain 'trainning'</p>`);
+
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="d1" class="div"> Hello World welcome to java trainning</div><br>
+    <div id="d2" class="div"> This is div tag </div><br>
+    <div id="d3" class="div"> This is full time trainning course</div><br>
+
+    <button type="button" id="btn">Click Here</button>
+    <div id="d4"></div>
+
+    </div>
+    
+</body>
+</html>
