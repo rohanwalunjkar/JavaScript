@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid blue;
+        }
+    </style>
+    <script>
+        
+        function validateData(){
+            var name = document.getElementById("name").value;
+            var luckyNumber=parseInt(document.getElementById("luckyno").value)
+            if(name.length>=10||!/^[a-zA-Z]+$/.test(name))
+            {
+                alert("Only alphabets are allowed and maximum allowed characters are 10")
+                return false;
+            }
+            if(luckyNumber<=1000||luckyNumber>=9999)
+            {
+                alert("Lucky number should be between 1000 and 9999");
+                return false;
+            }
+            return true;
+
+
+
+        }
+    </script>
+    <script>
+        var foodChecked=[];
+        function display(){
+        debugger
+
+        var name = document.getElementById("name").value;
+        var dob=document.getElementById("dob").value;
+        var email=document.getElementById("email").value;
+       
+
+        var genderArr=document.getElementsByName("gender");
+            for(i=0;i<genderArr.length;i++)
+            {
+                if(genderArr[i].checked)
+                {
+                    var gender=genderArr[i].value;
+                }
+            }
+        console.log(gender);
+
+        var luckyNumber=parseInt(document.getElementById("luckyno").value)
+
+        var food=document.getElementsByName("food");
+         var foodChecked=[];
+        for(i=0;i<food.length;i++)
+        {
+            if(food[i].checked)
+            {
+                console.log(food[i].value);
+                 foodChecked.push(food[i].value);
+                 
+            }
+        }
+        console.log(foodChecked)
+
+
+        var person = {
+          name: name,
+          dob:dob,
+          email:email,
+          gender:gender,
+          luckyNumber:luckyNumber,
+          foodChecked:foodChecked
+          
+        };
+
+        var orderWindow = window.open("", "Details", "width=600,height=400");
+        orderWindow.document.write("<h4> Details</h4>");
+        orderWindow.document.write("<table>");
+        orderWindow.document.write("<tr><th>Name</th><td>" + person.name + "</td></tr>");
+        orderWindow.document.write("<tr><th>Birth Date</th><td>" +person.dob + "</td></tr>");
+        orderWindow.document.write("<tr><th>Email</th><td>" +person.email  + "</td></tr>");
+        orderWindow.document.write("<tr><th>Gender</th><td>" + person.gender + "</td></tr>");
+        orderWindow.document.write("<tr><th>Lucky Number</th><td>" + person.luckyNumber + "</td></tr>");
+        orderWindow.document.write("<tr><th>Favrourite Foods</th><td>" + person.foodChecked + "</td></tr>");
+        orderWindow.document.write("</table>");
+      }
+
+
+      function action()
+        {
+            validateData();
+            display();
+        }
+    </script>
+</head>
+<body>
+    <div>
+       <table>
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" id="name" name="name" required/></td>
+        </tr>
+        <tr>
+            <td><label>Birth date</label></td>
+            <td><input type="date" id="dob" name="dob" required/></td>
+        </tr>
+        <tr>
+            <td><label>Email Address</label></td>
+            <td><input type="email" name="email" id="email" required/></td>
+        </tr>
+        <tr>
+            <td><label>Gender</label></td>
+            <td>
+                <input type="radio" name="gender" id="gender1" value="male" />
+                <label for="gender1">Male</label>
+                <br />
+                <input type="radio" name="gender" id="gender2" value="female" />
+                <label for="gender2">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Lucky Number</label></td>
+            <td><input type="text" id="luckyno" name="luckyno" required/></td>
+        </tr>
+        <tr>
+            <td><label>Favorite Foods</label></td>
+            <td>
+                <input type="checkbox" id="check1" name="food" value="pizza"/>
+                <label>Pizza</label>
+                <br />
+                <input type="checkbox" id="check2" name="food" value="pasta"/>
+                <label>Pasta</label>
+                <br />
+                <input type="checkbox" id="check3" name="food" value="chinese"/>
+                <label>Chinese</label>
+            
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="btn" onclick="action()">Send Data</button>
+            </td>
+        </tr>
+       </table>
+    </div>
+</body>
+</html>

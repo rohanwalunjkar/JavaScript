@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <style>
+        .div{
+            border: 2px solid blue;
+            padding: 15px;
+            width: 65%;
+            
+        }
+        span{
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+       
+            $("#btn").click(function(){
+                var name = $("#cname").val();
+                if(name.trim().length>6)
+                {
+                    $("#cnameerr").html(" ")
+                }
+                else
+                {
+                    $("#cnameerr").html("customer name cannot be < 6 characters")
+                }
+
+                billdate=$("#billdate").val()
+                var dt1=new Date(billdate);
+                bdate=dt1.getTime()
+                shipdate=$("#shipdate").val()
+                var dt2=new Date(shipdate);
+                
+                sdate=dt2.getTime()
+                 diff=sdate-bdate;
+                 var daysdiff=diff/(1000*3600*24);
+                 console.log(daysdiff);
+                 if(daysdiff > 0)
+                {
+                    $("#dateerr").html(" ")
+                }
+                else{
+                    $("#dateerr").html("Billing date cannot be greater than shipping date")
+                }
+
+
+        })
+    })
+        // function validateData()
+        // {
+        //     custname("#cname","#cnameerr");
+        // }
+    </script>
+    <script>
+        // document.getElementById("btn").addEventListener("click", function() {
+        function validateData(){
+            alert("inside fun")
+        debugger
+        var customerID=parseInt(document.getElementById("id").value);
+        var customerName = document.getElementById("cname").value;
+        var billdate=document.getElementById("billdate").value;
+        var shipdate=document.getElementById("shipdate").value;
+        var total=parseInt(document.getElementById("total").value);
+
+        var order = {
+          customerID:customerID,
+          customerName: customerName,
+          billdate: billdate,
+          shipdate: shipdate,
+          total: total
+       
+        };
+        var orderWindow = window.open("", "Order Window", "width=600,height=500");
+        orderWindow.document.write("<h1>Order Details</h1>");
+        orderWindow.document.write("<table>");
+        orderWindow.document.write("<tr><th>Customer ID</th><td>" + order.customerID + "</td></tr>");
+        orderWindow.document.write("<tr><th>Customer Name</th><td>" + order.customerName + "</td></tr>");
+        orderWindow.document.write("<tr><th>Billing date</th><td>" + order.billdate+ "</td></tr>");
+        orderWindow.document.write("<tr><th>Shipping Date</th><td>" + order.shipdate + "</td></tr>");
+        orderWindow.document.write("<tr><th>Total</th><td>" + order.total + "</td></tr>");
+        orderWindow.document.write("</table>");
+      }
+    </script>
+
+</head>
+<body>
+   <div class="div">
+    <label>Order ID : </label>
+    <input type="text" name="id" id="id" required autofocus/><br/><br />
+
+    <label>Cust name : </label>
+    <input type="text" name="cname" id="cname" required/>
+    <span id="cnameerr"></span>
+    <br /><br />
+
+    <label>Enter Billing date : </label>
+    <input type="date" name="billdate" id="billdate" required/>
+    <span id="dateerr"></span>
+    <br /><br />
+
+    <label>Enter Shipping date : </label>
+    <input type="date" name="shipdate" id="shipdate" required/><br /><br />
+
+    <label>Order total : </label>
+    <input type="text" name="total" id="total" required/><br /><br />
+
+    <button type="button" id="btn" onclick="validateData()">display</button>
+
+   </div> 
+</body>
+</html>
